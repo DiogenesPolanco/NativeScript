@@ -1,0 +1,45 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets" loaded="pageLoaded" actionBarHidden="true">
+
+    <GridLayout rows="auto, *">
+        <widgets:action-bar />
+        <StackLayout row="1">
+
+            <GridLayout rows="auto, auto, auto, auto" columns="*, *" visibility="{{ signinVisibility }}">
+                <Label text="Email" cssClass="form-label" />
+                <TextField col="1" text="{{ email }}" cssClass="form-field" />
+                <StackLayout colSpan="2" cssClass="form-item-border" />
+
+                <Label row="1" text="Password" cssClass="form-label" />
+                <TextField row="1" col="1" text="{{ password }}" secure="true" cssClass="form-field" />
+                <StackLayout row="1" colSpan="2" cssClass="form-item-border" />
+
+                <widgets:button row="2" colSpan="2" text="Sign In" tap="{{ onSignin }}" />
+                <widgets:button row="3" colSpan="2" text="Register" tap="{{ onShowRegister }}" />
+            </GridLayout>
+            <GridLayout rows="auto, auto, auto, auto, auto" columns="*, *" visibility="{{ registerVisibility }}">
+                <Label text="Email" cssClass="form-label" />
+                <TextField col="1" text="{{ email }}" cssClass="form-field" />
+                <StackLayout colSpan="2" cssClass="form-item-border" />
+
+                <Label row="1" text="Password" cssClass="form-label" />
+                <TextField row="1" col="1" text="{{ password }}" secure="true" cssClass="form-field" />
+                <StackLayout row="1" colSpan="2" cssClass="form-item-border" />
+
+
+                <Label row="2" text="Name" cssClass="form-label" />
+                <TextField row="2" col="1" text="{{ displayName }}" cssClass="form-field" />
+                <StackLayout row="2" colSpan="2" cssClass="form-item-border" />
+
+
+                <widgets:button row="3" colSpan="2" text="Register" tap="{{ onRegister }}" />
+                <widgets:button row="4" colSpan="2" text="Sign In" tap="{{ onShowSignin }}" />
+            </GridLayout>
+            <!-- additional view content -->
+
+            <!-- START_CUSTOM_CODE_authenticationView -->
+            <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+
+            <!-- END_CUSTOM_CODE_authenticationView -->
+        </StackLayout>
+    </GridLayout>
+</Page>

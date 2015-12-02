@@ -1,0 +1,91 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets" loaded="pageLoaded" actionBarHidden="true">
+
+    <GridLayout rows="auto, *">
+        <widgets:action-bar />
+        <StackLayout row="1">
+
+            <StackLayout>
+
+                <GridLayout columns="*, *" rows="auto" cssClass="form-item">
+                    <StackLayout height="50" />
+
+                    <Label text="Username" cssClass="label" />
+
+                    <TextField col="1" />
+
+
+                </GridLayout>
+                <StackLayout cssClass="form-item-border" height="1"></StackLayout>
+
+                <GridLayout columns="*, *" rows="auto" cssClass="form-item">
+                    <StackLayout height="50" />
+
+                    <Label text="Username" cssClass="label" />
+
+                    <TextField col="1" />
+
+
+                </GridLayout>
+                <StackLayout cssClass="form-item-border" height="1"></StackLayout>
+
+                <GridLayout columns="*, *" rows="auto" cssClass="form-item">
+                    <StackLayout height="50" />
+
+                    <Label text="Search" cssClass="label" />
+
+                    <SearchBar col="1" />
+
+
+                </GridLayout>
+                <StackLayout cssClass="form-item-border" height="1"></StackLayout>
+
+                <GridLayout columns="*, *" rows="auto" cssClass="form-item">
+                    <StackLayout height="50" />
+
+                    <Label text="Password" cssClass="label" />
+
+                    <TextField col="1" secure="true" />
+
+
+                </GridLayout>
+                <StackLayout cssClass="form-item-border" height="1"></StackLayout>
+
+                <GridLayout columns="*, *" rows="auto" cssClass="form-item">
+                    <StackLayout height="50" />
+
+                    <Label text="Switch" cssClass="label" />
+
+                    <Switch col="1" checked="false" />
+
+
+                </GridLayout>
+                <StackLayout cssClass="form-item-border" height="1"></StackLayout>
+
+                <GridLayout columns="*, *" rows="auto" cssClass="form-item">
+                    <StackLayout height="50" />
+
+                    <TextView colSpan="2" text="" editable="false" />
+
+                </GridLayout>
+                <StackLayout cssClass="form-item-border" height="1"></StackLayout>
+                <!-- formViewModel additional fields -->
+
+
+                <GridLayout columns="*, *" rows="auto" cssClass="form-buttons">
+
+                    <widgets:button text="Cancel" tap="onformViewModelFormCancel" />
+
+
+                    <widgets:button col="1" text="Confirm" tap="onformViewModelFormSubmit" />
+
+                </GridLayout>
+            </StackLayout>
+            <!-- additional view content -->
+
+            <!-- START_CUSTOM_CODE_formView -->
+            <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+
+            <!-- END_CUSTOM_CODE_formView -->
+        </StackLayout>
+    </GridLayout>
+</Page>

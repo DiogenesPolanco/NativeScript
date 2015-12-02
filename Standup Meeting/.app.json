@@ -4,13 +4,144 @@
     {
       "type": "NativeScript:view",
       "name": "homeView",
-      "components": [],
+      "components": [
+        {
+          "type": "NativeScript:about",
+          "name": "homeViewModel",
+          "appName": "My App",
+          "appVersion": "Version 1",
+          "appDescription": "App description",
+          "contactButton": true,
+          "contactLabel": "Contact us",
+          "contactMail": "support@example.com",
+          "facebookButton": true,
+          "facebookLabel": "Like us on Facebook",
+          "facebookLink": "https://www.facebook.com/Telerik",
+          "twitterButton": true,
+          "twitterLabel": "Follow us on Twitter",
+          "twitterLink": "https://twitter.com/telerik"
+        }
+      ],
       "title": "Home View",
       "addToNavigation": true,
       "icon": "home"
+    },
+    {
+      "type": "NativeScript:view",
+      "name": "authenticationView",
+      "components": [
+        {
+          "type": "NativeScript:authentication",
+          "name": "authenticationViewModel",
+          "dataProvider": "standupMeeting",
+          "emailLabel": "Email",
+          "passwordLabel": "Password",
+          "signinLabel": "Sign In",
+          "signinRedirect": "homeView",
+          "enableRegistration": true,
+          "gotoRegisterLabel": "Register",
+          "registerEmailLabel": "Email",
+          "registerPasswordLabel": "Password",
+          "registerNameLabel": "Name",
+          "registerLabel": "Register",
+          "registerRedirect": "homeView",
+          "gotoSigninLabel": "Sign In"
+        }
+      ],
+      "title": "Authentication",
+      "addToNavigation": false
+    },
+    {
+      "type": "NativeScript:view",
+      "name": "formView",
+      "components": [
+        {
+          "type": "NativeScript:form",
+          "components": [
+            {
+              "type": "NativeScript:field",
+              "name": "username",
+              "title": "Username",
+              "inputType": "text"
+            },
+            {
+              "type": "NativeScript:field",
+              "name": "username1",
+              "title": "Username",
+              "inputType": "text"
+            },
+            {
+              "type": "NativeScript:field",
+              "name": "search",
+              "title": "Search",
+              "inputType": "search",
+              "placeholder": "Search"
+            },
+            {
+              "type": "NativeScript:field",
+              "name": "password",
+              "title": "Password",
+              "inputType": "password"
+            },
+            {
+              "type": "NativeScript:field",
+              "name": "switch",
+              "title": "Switch",
+              "inputType": "switch"
+            },
+            {
+              "type": "NativeScript:field",
+              "name": "paragraph",
+              "title": "Paragraph",
+              "inputType": "paragraph"
+            }
+          ],
+          "name": "formViewModel",
+          "submitButton": "Confirm",
+          "cancelButton": "Cancel"
+        }
+      ],
+      "title": "Form",
+      "addToNavigation": true,
+      "icon": "bookmarks"
+    },
+    {
+      "type": "NativeScript:view",
+      "name": "aboutView",
+      "components": [
+        {
+          "type": "NativeScript:about",
+          "name": "aboutViewModel",
+          "appName": "My App",
+          "appVersion": "Version 1",
+          "appDescription": "App description",
+          "contactButton": true,
+          "contactLabel": "Contact us",
+          "contactMail": "support@example.com",
+          "facebookButton": true,
+          "facebookLabel": "Like us on Facebook",
+          "facebookLink": "https://www.facebook.com/Telerik",
+          "twitterButton": true,
+          "twitterLabel": "Follow us on Twitter",
+          "twitterLink": "https://twitter.com/telerik"
+        }
+      ],
+      "title": "About",
+      "addToNavigation": true,
+      "icon": "info"
     }
   ],
-  "dataProviders": [],
+  "dataProviders": [
+    {
+      "type": "NativeScript:dataProvider",
+      "name": "standupMeeting",
+      "everliveUrl": "//platform.telerik.com/bs-api/v1/",
+      "title": "Standup Meeting / Standup Meeting",
+      "source": "everlive",
+      "everliveKey": "ofo2ezs900j4wdjn",
+      "offlineStorage": false
+    }
+  ],
   "name": "nativeScriptApp",
   "navigation": "listmenu",
   "transition": "none",
