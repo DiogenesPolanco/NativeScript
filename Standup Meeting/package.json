@@ -1,6 +1,11 @@
 {
-    "dependencies": {
-        "tns-core-modules": "1.4.0"
-    },
-    "devDependencies": {}
+	"nativescript": {
+		"id": "solvex.com.Standup",
+		"tns-android": {
+			"version": "1.5.0"
+		}
+	},
+	"dependencies": {
+		"tns-core-modules": "1.5.0"
+	}
 }
