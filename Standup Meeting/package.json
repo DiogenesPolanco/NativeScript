@@ -1,11 +1,19 @@
 {
-	"nativescript": {
-		"id": "solvex.com.Standup",
-		"tns-android": {
-			"version": "1.5.0"
-		}
-	},
-	"dependencies": {
-		"tns-core-modules": "1.5.0"
-	}
+  "nativescript": {
+    "id": "solvex.com.Standup",
+    "tns-android": {
+      "version": "1.5.0"
+    }
+  },
+  "dependencies": {
+    "nativescript-unit-test-runner": "^0.2.8",
+    "tns-core-modules": "1.5.0"
+  },
+  "devDependencies": {
+    "karma": "^0.13.15",
+    "karma-nativescript-launcher": "^0.3.0",
+    "karma-qunit": "^0.1.8",
+    "qunitjs": "^1.20.0",
+    "nativescript-telerik-ui":"^1.2.1"
+  }
 }

@@ -9,9 +9,9 @@
 // A task runner that calls the Typescript compiler (tsc) and
 // Compiles a HelloWorld.ts program
 {
-	   "version": "0.1.0",
+      "version": "0.1.0",
        "command": "tns",
-       "args": ["livesync","android"],
+       "args": ["device", "run"],
        "isShellCommand": true,
        "showOutput": "always"
 }

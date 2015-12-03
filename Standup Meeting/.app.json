@@ -8,21 +8,21 @@
         {
           "type": "NativeScript:about",
           "name": "homeViewModel",
-          "appName": "My App",
+          "appName": "My Standup Meeting",
           "appVersion": "Version 1",
-          "appDescription": "App description",
+          "appDescription": "this app you can create a meeting in which attendees typically participate while standing.",
           "contactButton": true,
           "contactLabel": "Contact us",
-          "contactMail": "support@example.com",
+          "contactMail": "contacto@solvex.com.do",
           "facebookButton": true,
           "facebookLabel": "Like us on Facebook",
-          "facebookLink": "https://www.facebook.com/Telerik",
+          "facebookLink": "https://www.facebook.com/solvexdo",
           "twitterButton": true,
           "twitterLabel": "Follow us on Twitter",
-          "twitterLink": "https://twitter.com/telerik"
+          "twitterLink": "https://twitter.com/solvexdo"
         }
       ],
-      "title": "Home View",
+      "title": "My Meetings",
       "addToNavigation": true,
       "icon": "home"
     },
@@ -49,7 +49,7 @@
         }
       ],
       "title": "Authentication",
-      "addToNavigation": false
+      "addToNavigation": true
     },
     {
       "type": "NativeScript:view",
@@ -101,7 +101,7 @@
           "cancelButton": "Cancel"
         }
       ],
-      "title": "Form",
+      "title": "Create Meeting",
       "addToNavigation": true,
       "icon": "bookmarks"
     },
@@ -112,18 +112,18 @@
         {
           "type": "NativeScript:about",
           "name": "aboutViewModel",
-          "appName": "My App",
+          "appName": "My Standup Meeting",
           "appVersion": "Version 1",
-          "appDescription": "App description",
+          "appDescription": "this app you can create a meeting in which attendees typically participate while standing.",
           "contactButton": true,
           "contactLabel": "Contact us",
-          "contactMail": "support@example.com",
+          "contactMail": "contacto@solvex.com.do",
           "facebookButton": true,
           "facebookLabel": "Like us on Facebook",
-          "facebookLink": "https://www.facebook.com/Telerik",
+          "facebookLink": "https://www.facebook.com/solvexdo",
           "twitterButton": true,
           "twitterLabel": "Follow us on Twitter",
-          "twitterLink": "https://twitter.com/telerik"
+          "twitterLink": "https://twitter.com/solvexdo"
         }
       ],
       "title": "About",
@@ -142,7 +142,7 @@
       "offlineStorage": false
     }
   ],
-  "name": "nativeScriptApp",
+  "name": "My Standup Meeting",
   "navigation": "listmenu",
   "transition": "none",
   "skin": "native"
