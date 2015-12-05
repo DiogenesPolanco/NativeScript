@@ -10,10 +10,36 @@ var gulp = require('gulp'),
     Config = require('./gulpfile.config'),
     tsProject = tsc.createProject('tsconfig.json'),
     browserSync = require('browser-sync'),
-    superstatic = require( 'superstatic' );
+    superstatic = require( 'superstatic' ),
+    gutil = require('gulp-util'),
+    spawn =  require('child_process').spawn,
+    gulpparams = require('gulp-param')(require('gulp'), process.argv);
 
 var config = new Config();
- 
+  
+gulpparams.task('run', function(device) { 
+    var child = spawn('tns', ['run', 'android'], {cwd: process.cwd()});
+    var stdout = '';
+    var stderr = '';
+    
+    child.stdout.setEncoding('utf8');
+    child.stdout.on('data', function (data) {
+        stdout += data;
+        console.log(gutil.colors.green(data));
+    });
+    
+    child.stderr.setEncoding('utf8');
+    child.stderr.on('data', function (data) {
+        stderr += data;
+        gutil.log(gutil.colors.red(data));
+        gutil.beep();
+    });
+    
+    child.on('close', function(code) {
+        console.log('Done with exit code', code);
+    }); 
+});
+  
 /**
  * Lint all custom TypeScript files.
  */
@@ -70,7 +96,7 @@ gulp.task('compile-ViewModels', function () {
 /**
  * Remove all generated JavaScript files from TypeScript compilation.
  */
-gulp.task('clean-ts', function (cb) {
+gulp.task('clean', function (cb) {
   var typeScriptGenFiles = [
                               config.tsOutputPath +'/**/*.js',    // path to all JS files auto gen'd by editor
                               config.tsOutputPathComponents +'/**/*.js',
@@ -86,4 +112,4 @@ gulp.task('watch', function() {
     gulp.watch([config.allTypeScript], ['ts-lint', 'compile-ViewModels', 'compile-Components', 'compile-ts']);
 });
  
-gulp.task('default', ['ts-lint', 'compile-ViewModels', 'compile-Components', 'compile-ts']);
+gulp.task('default', ['ts-lint', 'compile-ViewModels', 'compile-Components', 'compile-ts','run']);
