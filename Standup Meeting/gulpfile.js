@@ -13,22 +13,7 @@ var gulp = require('gulp'),
     superstatic = require( 'superstatic' );
 
 var config = new Config();
-
-/**
- * Generates the app.d.ts references file dynamically from all application *.ts files.
- */
-// gulp.task('gen-ts-refs', function () {
-//     var target = gulp.src(config.appTypeScriptReferences);
-//     var sources = gulp.src([config.allTypeScript], {read: false});
-//     return target.pipe(inject(sources, {
-//         starttag: '//{',
-//         endtag: '//}',
-//         transform: function (filepath) {
-//             return '/// <reference path="../..' + filepath + '" />';
-//         }
-//     })).pipe(gulp.dest(config.typings));
-// });
-
+ 
 /**
  * Lint all custom TypeScript files.
  */
@@ -100,21 +85,5 @@ gulp.task('clean-ts', function (cb) {
 gulp.task('watch', function() {
     gulp.watch([config.allTypeScript], ['ts-lint', 'compile-ViewModels', 'compile-Components', 'compile-ts']);
 });
-
-gulp.task('serve', ['compile-ViewModels', 'compile-Components', 'compile-ts', 'watch'], function() {
-  browserSync({
-    port: 3000,
-    files: ['index.html', '**/*.js'],
-    injectChanges: true,
-    logFileChanges: false,
-    logLevel: 'silent', 
-    notify: true,
-    reloadDelay: 0,
-    server: {
-      baseDir: './app',
-      middleware: superstatic({ debug: false})
-    }
-  });
-});
-
+ 
 gulp.task('default', ['ts-lint', 'compile-ViewModels', 'compile-Components', 'compile-ts']);

@@ -1,8 +1,6 @@
 'use strict';
 var GulpConfig = (function () {
-    function gulpConfig() {
-        //Got tired of scrolling through all the comments so removed them
-        //Don't hurt me AC :-)
+    function gulpConfig() { 
         this.source = 'src/';
         this.sourceApp = 'app/';
 

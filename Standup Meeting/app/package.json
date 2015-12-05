@@ -1,17 +1,17 @@
 {
-    "name": "tns-template-blank",
+    "name": "Standup Meeting",
     "main": "app.js",
-    "version": "1.4.0",
-    "author": "Diogenes Polanco",
-    "description": "Nativescript blank project template",
-    "license": "BSD",
+    "version": "0.0.1",
+    "author": "Diogenes.Polanco@solvex.com.do",
+    "description": "This is a sample project implementing the TypeScript + NativeScript.",
+    "license": "GPL-3.0",
     "keywords": [
-        "telerik",
+        "solvex",
         "mobile",
         "nativescript",
         "{N}",
         "tns",
-        "appbuilder",
-        "template"
+        "ts",
+        "TypeScript" 
     ] 
 }
