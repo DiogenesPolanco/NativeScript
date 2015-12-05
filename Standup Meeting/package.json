@@ -1,5 +1,5 @@
 {
-	"name":"Standup Meeting",
+	"name":"StandupMeeting",
 	"version": "0.0.1",
 	"nativescript": {
 		"id": "solvex.com.Standup",
@@ -45,7 +45,7 @@
 		"gulp-mocha": "^2.0.1",
 		"merge-stream": "^0.1.7",
 		"mocha": "^2.2.4",
-    	"run-sequence": "^1.1.0",
+        "run-sequence": "^1.1.0",
 		"tsd": "^0.6.3",
 		"superstatic": "^1.2.3"
 	}
