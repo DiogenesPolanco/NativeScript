@@ -1,5 +1,5 @@
 {
-	"name":"StandupMeeting",
+	"name": "StandupMeeting",
 	"version": "0.0.1",
 	"nativescript": {
 		"id": "solvex.com.Standup",
@@ -9,11 +9,11 @@
 	},
 	"main": "app/package.json",
 	"scripts": {
-		"start": "gulp serve",
+		"start": "gulp",
 		"postinstall": "tsd reinstall -so && gulp"
 	},
 	"keywords": [
-		"angularjs",
+		"nativescript",
 		"typescript"
 	],
 	"license": "GPL-3.0",
@@ -35,17 +35,17 @@
 		"gulp-sourcemaps": "^1.5.2",
 		"gulp-tslint": "^3.2.0",
 		"gulp-typescript": "^2.8.0",
-		"gulp-tsd": "^0.0.4", 
+		"gulp-tsd": "^0.0.4",
 		"gulp-param": "^0.6.3",
 		"gulp-util": "^3.0.4",
 		"chai": "^2.3.0",
-		"chalk": "^1.0.0", 
+		"chalk": "^1.0.0",
 		"gulp-babel": "^5.1.0",
 		"gulp-eslint": "^0.12.0",
 		"gulp-mocha": "^2.0.1",
 		"merge-stream": "^0.1.7",
 		"mocha": "^2.2.4",
-        "run-sequence": "^1.1.0",
+		"run-sequence": "^1.1.0",
 		"tsd": "^0.6.3",
 		"superstatic": "^1.2.3"
 	}

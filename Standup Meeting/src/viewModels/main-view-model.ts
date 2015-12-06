@@ -1,22 +1,7 @@
-import observable = require("data/observable");
+﻿import viewModelBaseModule = require("../views/common/view-model-base");  
 
-export class HelloWorldModel extends observable.Observable {
-    private counter: number;
+export class MainViewModel extends viewModelBaseModule.ViewModelBase {   
     constructor() {
         super(); 
-        // Initialize default values.
-        this.counter = 42;
-        this.set("message", this.counter + " taps left");
-    }
-
-    public tapAction() {
-        this.counter--;
-        if (this.counter <= 0) {
-            this.set("message", "Hoorraaay! You unlocked the NativeScript clicker achievement!");
-        }
-        else {
-            this.set("message", this.counter + " taps left")
-        }
-    }
+    } 
 }
-export var mainViewModel = new HelloWorldModel();

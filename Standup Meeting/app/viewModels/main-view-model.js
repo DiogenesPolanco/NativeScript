@@ -3,25 +3,12 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var observable = require("data/observable");
-var HelloWorldModel = (function (_super) {
-    __extends(HelloWorldModel, _super);
-    function HelloWorldModel() {
+var viewModelBaseModule = require("../views/common/view-model-base");
+var MainViewModel = (function (_super) {
+    __extends(MainViewModel, _super);
+    function MainViewModel() {
         _super.call(this);
-        // Initialize default values.
-        this.counter = 42;
-        this.set("message", this.counter + " taps left");
     }
-    HelloWorldModel.prototype.tapAction = function () {
-        this.counter--;
-        if (this.counter <= 0) {
-            this.set("message", "Hoorraaay! You unlocked the NativeScript clicker achievement!");
-        }
-        else {
-            this.set("message", this.counter + " taps left");
-        }
-    };
-    return HelloWorldModel;
-})(observable.Observable);
-exports.HelloWorldModel = HelloWorldModel;
-exports.mainViewModel = new HelloWorldModel();
+    return MainViewModel;
+})(viewModelBaseModule.ViewModelBase);
+exports.MainViewModel = MainViewModel;

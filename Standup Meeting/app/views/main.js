@@ -3,6 +3,6 @@ var vmModule = require("../viewModels/main-view-model");
 function pageLoaded(args) {
     // Get the event sender
     var page = args.object;
-    page.bindingContext = vmModule.mainViewModel;
+    page.bindingContext = vmModule.MainViewModel;
 }
 exports.pageLoaded = pageLoaded;

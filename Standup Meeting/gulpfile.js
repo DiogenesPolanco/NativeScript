@@ -12,13 +12,12 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync'),
     superstatic = require( 'superstatic' ),
     gutil = require('gulp-util'),
-    spawn =  require('child_process').spawn,
-    gulpparams = require('gulp-param')(require('gulp'), process.argv);
+    spawn =  require('child_process').spawn;
 
 var config = new Config();
   
-gulpparams.task('run', function(device) { 
-    var child = spawn('tns', ['run', 'android'], {cwd: process.cwd()});
+gulp.task('run', function() { 
+    var child = spawn('tns', ['run', 'android']);
     var stdout = '';
     var stderr = '';
     
@@ -43,73 +42,32 @@ gulpparams.task('run', function(device) {
 /**
  * Lint all custom TypeScript files.
  */
-gulp.task('ts-lint', function () {
+gulp.task('lint', function () {
     return gulp.src(config.allTypeScript).pipe(tslint()).pipe(tslint.report('prose'));
 });
 
 /**
  * Compile TypeScript and include references to library and app .d.ts files.
  */
-gulp.task('compile-ts', function () {
-    var sourceTsFiles = [config.allTypeScript,                //path to typescript files
-                         config.libraryTypeScriptDefinitions]; //reference to library .d.ts files
-                        
-
-    var tsResult = gulp.src(sourceTsFiles)
-                     //  .pipe(sourcemaps.init())
-                       .pipe(tsc(tsProject));
-
+gulp.task('compile', function () {
+    var sourceTsFiles = [config.allTypeScript,config.libraryTypeScriptDefinitions];  
+    var tsResult = gulp.src(sourceTsFiles).pipe(tsc(tsProject)); 
         tsResult.dts.pipe(gulp.dest(config.tsOutputPath));
         return tsResult.js
                         .pipe(sourcemaps.write('.'))
                         .pipe(gulp.dest(config.tsOutputPath));
 });
-
-gulp.task('compile-Components', function () {
-    var sourceTsFiles = [config.allTypeScriptComponents,                //path to typescript files
-                         config.libraryTypeScriptDefinitions]; //reference to library .d.ts files
-                         
-    var tsResult = gulp.src(sourceTsFiles)
-                     //  .pipe(sourcemaps.init())
-                       .pipe(tsc(tsProject));
-
-        tsResult.dts.pipe(gulp.dest(config.tsOutputPathComponents));
-        return tsResult.js
-                        .pipe(sourcemaps.write('.'))
-                        .pipe(gulp.dest(config.tsOutputPathComponents));
-});
-
-gulp.task('compile-ViewModels', function () {
-    var sourceTsFiles = [config.allTypeScriptViewModels,                //path to typescript files
-                         config.libraryTypeScriptDefinitions]; //reference to library .d.ts files
-                         
-    var tsResult = gulp.src(sourceTsFiles)
-                     //  .pipe(sourcemaps.init())
-                       .pipe(tsc(tsProject));
-
-        tsResult.dts.pipe(gulp.dest(config.tsOutputPathViewModels));
-        return tsResult.js
-                        .pipe(sourcemaps.write('.'))
-                        .pipe(gulp.dest(config.tsOutputPathViewModels));
-});
-
+  
 /**
  * Remove all generated JavaScript files from TypeScript compilation.
  */
 gulp.task('clean', function (cb) {
   var typeScriptGenFiles = [
-                              config.tsOutputPath +'/**/*.js',    // path to all JS files auto gen'd by editor
-                              config.tsOutputPathComponents +'/**/*.js',
-                              config.tsOutputPathViewModels +'/**/*.js',
-                              '!' + config.tsOutputPath + '/lib'
-                           ];
+        config.tsOutputPath +'/**/*.js' 
+];
 
   // delete the files
   del(typeScriptGenFiles, cb);
 });
-
-gulp.task('watch', function() {
-    gulp.watch([config.allTypeScript], ['ts-lint', 'compile-ViewModels', 'compile-Components', 'compile-ts']);
-});
  
-gulp.task('default', ['ts-lint', 'compile-ViewModels', 'compile-Components', 'compile-ts','run']);
+gulp.task('default', ['clean','lint','compile']);

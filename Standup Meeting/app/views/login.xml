@@ -1,0 +1,17 @@
+<Page  loaded="pageLoaded">
+    <GridLayout>
+        <ScrollView>
+            <StackLayout orientation="vertical"> 
+                <Image src="~/images/SXlogo.png" stretch="none" horizontalAlignment="center" />
+            
+                
+                <TextField hint="Email Address" id="username"  text="{{ username }}" keyboardType="email" keyboardType="email" returnKeyType="next" returnPress="focusPassword" autocorrect="false" autocapitalizationType="none" row="0"  />
+                <TextField hint="Password"  id="password" text="{{ password }}" secure="true" returnKeyType="done" returnPress="loginButtonTap" row="1" />
+            
+                <Button text="Sign in"  tap="loginButtonTap" />  
+            </StackLayout>    
+        </ScrollView>
+       <ActivityIndicator busy="{{ isLoading }}" />
+    </GridLayout>
+</Page>
+ 

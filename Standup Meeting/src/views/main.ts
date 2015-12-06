@@ -1,4 +1,4 @@
-import observable = require("data/observable");
+﻿import observable = require("data/observable");
 import pages = require("ui/page");
 import vmModule = require("../viewModels/main-view-model");
 
@@ -6,5 +6,5 @@ import vmModule = require("../viewModels/main-view-model");
 export function pageLoaded(args: observable.EventData) {
     // Get the event sender
     var page = <pages.Page>args.object;
-    page.bindingContext = vmModule.mainViewModel;
+    page.bindingContext = vmModule.MainViewModel;
 }
