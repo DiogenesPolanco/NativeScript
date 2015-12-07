@@ -17,7 +17,7 @@ var gulp = require('gulp'),
 var config = new Config();
   
 gulp.task('run', function() { 
-    var child = spawn('tns', ['run', 'android']);
+    var child = spawn('tns', ['emulate', 'android','--geny','Galaxy']);
     var stdout = '';
     var stderr = '';
     
@@ -70,4 +70,4 @@ gulp.task('clean', function (cb) {
   del(typeScriptGenFiles, cb);
 });
  
-gulp.task('default', ['run','clean','lint','compile']);
+gulp.task('default', ['clean','lint','compile']);

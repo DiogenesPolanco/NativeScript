@@ -1,6 +1,6 @@
 import viewModelBaseModule = require("../views/common/view-model-base"); 
 import navigationModule = require("../utils/navigation");
-//import serviceModule = require("../utils/service");
+import serviceModule = require("../utils/service");
 import viewsModule = require("../utils/views");
 
 export class LoginViewModel extends viewModelBaseModule.ViewModelBase {
@@ -39,21 +39,17 @@ export class LoginViewModel extends viewModelBaseModule.ViewModelBase {
         if (this.validate()) {
             if (!this.beginLoading()){
                 return;
-            }else{
-                    navigationModule.navigate({
-                        moduleName: viewsModule.Views.main
-                    });
-                    this.endLoading();
-                /* TODO
+            }else{ 
                 serviceModule.service.login(this.username, this.password).then((data: any) => {
                     navigationModule.navigate({
                         moduleName: viewsModule.Views.main
                     });
+                    console.log(data);
                     this.endLoading();
                 },(error: any) => {
                         this.clearPassword();
                         this.endLoading();
-                });*/
+                }); 
             } 
         }
         else {

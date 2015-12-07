@@ -5,7 +5,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var viewModelBaseModule = require("../views/common/view-model-base");
 var navigationModule = require("../utils/navigation");
-//import serviceModule = require("../utils/service");
+var serviceModule = require("../utils/service");
 var viewsModule = require("../utils/views");
 var LoginViewModel = (function (_super) {
     __extends(LoginViewModel, _super);
@@ -41,15 +41,22 @@ var LoginViewModel = (function (_super) {
         configurable: true
     });
     LoginViewModel.prototype.login = function () {
+        var _this = this;
         if (this.validate()) {
             if (!this.beginLoading()) {
                 return;
             }
             else {
-                navigationModule.navigate({
-                    moduleName: viewsModule.Views.main
+                serviceModule.service.login(this.username, this.password).then(function (data) {
+                    navigationModule.navigate({
+                        moduleName: viewsModule.Views.main
+                    });
+                    console.log(data);
+                    _this.endLoading();
+                }, function (error) {
+                    _this.clearPassword();
+                    _this.endLoading();
                 });
-                this.endLoading();
             }
         }
         else {
