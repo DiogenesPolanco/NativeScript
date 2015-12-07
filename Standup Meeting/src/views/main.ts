@@ -1,10 +1,12 @@
-﻿import observable = require("data/observable");
-import pages = require("ui/page");
-import vmModule = require("../viewModels/main-view-model");
+﻿import observableModule = require("data/observable"); 
+import pageModule = require("ui/page");  
+import vmModule = require("../viewModels/main-view-model"); 
+import viewsModule = require("../utils/views");  
 
-// Event handler for Page "loaded" event attached in main-page.xml
-export function pageLoaded(args: observable.EventData) {
-    // Get the event sender
-    var page = <pages.Page>args.object;
-    page.bindingContext = vmModule.MainViewModel;
+var viewModel : vmModule.MainViewModel;
+export function pageLoaded(args: observableModule.EventData) {
+    var  page = <pageModule.Page>args.object;  
+    viewModel = new  vmModule.MainViewModel();
+    viewModel.set("message",viewsModule.Views.message);
+    page.bindingContext = viewModel; 
 }

@@ -70,4 +70,4 @@ gulp.task('clean', function (cb) {
   del(typeScriptGenFiles, cb);
 });
  
-gulp.task('default', ['clean','lint','compile']);
+gulp.task('default', ['run','clean','lint','compile']);

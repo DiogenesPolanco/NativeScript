@@ -1,7 +1,7 @@
  
 import observableModule = require("data/observable");  
 import dialogsModule = require("ui/dialogs");
-import connectivity = require("connectivity"); 
+//import connectivity = require("connectivity"); 
 var stringsModule = require("../../resources/strings");
 
 export class ViewModelBase extends observableModule.Observable {
@@ -31,10 +31,10 @@ export class ViewModelBase extends observableModule.Observable {
     }
 
     beginLoading(): boolean {
-        if (connectivity.getConnectionType() === connectivity.connectionType.none){
+       /* if (connectivity.getConnectionType() === connectivity.connectionType.none){
             this.showError("No internet connection.");
             return false;
-        }
+        }*/
 
         if (!this._loadingCount) {
             this.isLoading = true;

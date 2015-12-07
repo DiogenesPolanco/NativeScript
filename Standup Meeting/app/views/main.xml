@@ -1,28 +1,14 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd"
-      xmlns:c="components/list-picker"
-      xmlns:tsd="controls/sidedrawer"
-      navigatingTo="navigatingTo" >
-  <GridLayout rows="auto, *, auto, auto" >
-    <StackLayout cssClass="sideDrawerHeader">
-      <Border borderWidth="2" borderColor="#554E4A" tap="editProfileButtonTap" cssClass="sideDrawerProfilePictureContainer">
-        <Image src="res://profile_picture" stretch="none" cssClass="profilePicture" />
-      </Border>
-
-      <Label bindingContext="{{ user }}" text="{{ DisplayName }}" cssClass="sideDrawerLabel" />
-      <Label bindingContext="{{ user }}" text="{{ Email }}" cssClass="sideDrawerLabel" />
-    </StackLayout>
-
-    <ListView row="1" items="{{ views.items }}" itemTap="viewTap" >
-      <ListView.itemTemplate>
-        <GridLayout cssClass="{{ isSelected ? 'itemContainer-selected' : 'itemContainer' }}">
-          <Label text="{{ data.Name }}" />
-        </GridLayout>
-      </ListView.itemTemplate>
-    </ListView>
-
-    <Border row="2" cssClass="menuSeparator" />
-    <GridLayout row="3" cssClass="menuButton" tap="logoutButtonTap">
-      <Label text="Log out" cssClass="menuButtonContent" />
-    </GridLayout>
-  </GridLayout>
+<Page  loaded="pageLoaded" xmlns="http://schemas.nativescript.org/tns.xsd">
+        <page.actionBar>
+            <action-bar title="Standup Meeting" />
+        </page.actionBar>
+        <scroll-view>
+            <stack-layout orientation="vertical"> 
+                <Image src="~/images/SXlogo.png" stretch="none" horizontalAlignment="center" />  
+                 
+                 <Label text="{{ message }}" horizontalAlignment="center" verticalAlignment="center"/>
+                 
+            </stack-layout>    
+        </scroll-view> 
 </Page>
+ 
