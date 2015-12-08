@@ -9,7 +9,7 @@ if (serviceModule.service.isAuthenticated) {
 }
 else {
 	applicationModule.mainEntry = {
-		moduleName: viewsModule.Views.login,
+		moduleName: viewsModule.Views.resort,
 		backstackVisible: false
 	};
 }

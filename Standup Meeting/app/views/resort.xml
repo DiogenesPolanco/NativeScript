@@ -1,0 +1,14 @@
+<Page  loaded="pageLoaded" xmlns="http://schemas.nativescript.org/tns.xsd">
+        <page.actionBar>
+            <action-bar title="Remaining time to SX-Resort" />
+        </page.actionBar>
+        <scroll-view>
+            <stack-layout orientation="vertical"> 
+                <Image src="~/images/SXlogo.png" stretch="none" horizontalAlignment="center" />  
+                 
+                 <Label text="{{ message }}" horizontalAlignment="center" verticalAlignment="center"/>
+                 
+            </stack-layout>    
+        </scroll-view> 
+</Page>
+ 
